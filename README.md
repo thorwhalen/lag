@@ -24,7 +24,7 @@ Starts a counter on enter and stores the elapsed time on exit.
 >>> round_up_to_two_digits(tc.elapsed)
 ```
 
-## `CumulativeTimings`
+## CumulativeTimings
 
 Context manager that is meant to be used in a loop to time and accumulate both timings and relevant data.
 
@@ -64,7 +64,7 @@ Note: Calling cumul_timing to tell it to store some data for a loop step does ha
 [(0.0, 'index: 0'), (0.2, 'index: 1'), (0.4, 'index: 2'), (0.6, 'index: 3')]
 ```
 
-## `time_multiple_calls` and `time_arg_combinations`
+## time_multiple_calls and time_arg_combinations
 
 These functions use `CumulativeTimings` to time a function call repeatedly with different inputs.
 
