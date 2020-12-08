@@ -117,12 +117,11 @@ def time_multiple_calls(func, arguments, return_func_args=True, include_func_out
             if include_func_output:
                 output_kind = 'func_args_and_output'
             else:
-                output_kind = 'func_output'
+                output_kind = 'func_args'
         else:
-            output_kind = 'func_args'
+            output_kind = 'func_output'
     else:
         output_kind = 'only_timings'
-
     cumul_timing = CumulativeTimings()
     for func_args in arguments:
         with cumul_timing:
@@ -165,7 +164,8 @@ def time_arg_combinations(func, args_base, return_func_args=True, include_func_o
     >>> args
     [(0.1, 2, 0.2), (0.1, 5, 0.5), (0.2, 2, 0.4), (0.2, 5, 1.0)]
     """
-    return time_multiple_calls(func, product(*args_base), return_func_args, include_func_output)
+    return time_multiple_calls(func, product(*args_base),
+                               return_func_args=return_func_args, include_func_output=include_func_output)
 
 
 class TimerAndFeedback(TimedContext):
